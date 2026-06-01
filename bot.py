@@ -66,7 +66,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         f"✝️ *Welcome, {user.first_name}!*\n\n"
         "This quiz tests your knowledge of *Orthodox Christianity* through image flashcards.\n\n"
-        "• 📸 Each card shows a question image\n"
+        "• 📸 Each card shows a question image, think of one word which represents the flashcard\n"
         "• 👁 Tap to reveal the answer\n"
         "• ✅ Mark whether you got it right\n"
         "• 🔄 Missed cards come back at the end\n\n"
