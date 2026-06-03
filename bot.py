@@ -64,7 +64,7 @@ def get_image_path(name: str) -> str:
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     await update.message.reply_text(
-        f"✝️ *Welcome, {user.first_name}!*\n\n"
+        f"☦️ *Welcome, {user.first_name}!*\n\n"
         "This quiz tests your knowledge of *Orthodox Christianity* through image flashcards.\n\n"
         "• 📸 Each card shows a question image, think of one word which represents the flashcard\n"
         "• 👁 Tap to reveal the answer\n"
@@ -162,7 +162,7 @@ async def reveal_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         pass
 
     caption = (
-        f"✝️ *Answer for card {idx + 1}*\n\n"
+        f"☦️ *Answer for card {idx + 1}*\n\n"
         "Did you get it right?"
     )
 
@@ -243,7 +243,7 @@ async def show_results(update: Update, context: ContextTypes.DEFAULT_TYPE):
         grade = "🙏 Keep praying and studying!"
 
     text = (
-        f"✝️ *Quiz Complete!*\n\n"
+        f"☦️ *Quiz Complete!*\n\n"
         f"👤 *{user.first_name} {user.last_name or ''}*\n"
         f"📊 Score: *{score} / {total}* ({pct}%)\n\n"
         f"{grade}"
@@ -318,7 +318,7 @@ async def start_retry(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await query.edit_message_text(
         f"🔄 *Retry Mode*\n\n"
-        f"Redoing *{len(wrong)}* card(s) you marked for review.\nGood luck! ✝️",
+        f"Redoing *{len(wrong)}* card(s) you marked for review.\nGood luck! ☦️",
         parse_mode="Markdown",
     )
     await send_question(update, context)
@@ -329,7 +329,7 @@ async def go_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     user  = query.from_user
     await query.edit_message_text(
-        f"✝️ *Welcome back, {user.first_name}!*\n\nReady for another round?",
+        f"☦️ *Welcome back, {user.first_name}!*\n\nReady for another round?",
         parse_mode="Markdown",
         reply_markup=main_menu_kb(),
     )
@@ -337,7 +337,7 @@ async def go_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def show_about(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.edit_message_text(
-        "✝️ *Orthodox Flashcard Quiz*\n\n"
+        "☦️ *Orthodox Flashcard Quiz*\n\n"
         "An image-based flashcard bot for deepening your knowledge of:\n\n"
         "• 📖 Bible verses\n"
         "• ⛪ Orthodox theology & dogma\n"
@@ -360,7 +360,7 @@ def main():
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(button_handler))
 
-    logger.info("✝️ Orthodox Flashcard Bot is running...")
+    logger.info("☦️ Orthodox Flashcard Bot is running...")
     app.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == "__main__":
