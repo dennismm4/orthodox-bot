@@ -13,7 +13,7 @@ FLASHCARDS = [
         "label": f"Card {card_id}",
         "hint": "Study the question image carefully.",
     }
-    for card_id in range(1, 30)
+    for card_id in range(1, 31)
 ]
 
 # ─── How to add more cards ────────────────────────────────────────────────────
